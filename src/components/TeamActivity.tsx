@@ -15,7 +15,10 @@ export function TeamActivity({ members }: { members: TeamMember[] }) {
   return (
     <section className="flex min-h-0 flex-1 flex-col rounded-xl border border-[#e5ebe8] bg-white shadow-[0_1px_2px_rgba(10,61,46,0.04)]">
       <div className="flex items-center justify-between border-b border-[#eef2f0] px-4 py-3">
-        <h2 className="text-[14px] font-semibold text-[#1a2e26]">Team Activity</h2>
+        <div>
+          <h2 className="text-[14px] font-semibold text-[#1a2e26]">Team Activity</h2>
+          <p className="text-[11px] text-[#8a9a92]">Click a name to view tasks</p>
+        </div>
         <Link href="/tasks" className="text-[12px] font-medium text-[#0a3d2e] hover:underline">
           Full register
         </Link>

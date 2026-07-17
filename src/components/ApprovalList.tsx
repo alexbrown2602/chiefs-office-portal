@@ -53,9 +53,12 @@ export function ApprovalList({ items }: { items: ApprovalItem[] }) {
         />
       ) : null}
       <div className="flex items-center justify-between border-b border-[#eef2f0] px-4 py-3">
-        <h2 className="text-[14px] font-semibold text-[#1a2e26]">
-          Needs Approval / Signature
-        </h2>
+        <div>
+          <h2 className="text-[14px] font-semibold text-[#1a2e26]">
+            Needs Approval / Signature
+          </h2>
+          <p className="text-[11px] text-[#8a9a92]">Sign, decide, or review</p>
+        </div>
         <Link href="/approvals" className="text-[12px] font-medium text-[#0a3d2e] hover:underline">
           View all
         </Link>
