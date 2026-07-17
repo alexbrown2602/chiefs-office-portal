@@ -12,8 +12,8 @@ export function UpcomingMeetings({ meetings }: { meetings: Meeting[] }) {
       </div>
       <ul className="divide-y divide-[#eef2f0] overflow-y-auto">
         {meetings.map((meeting) => (
-          <li key={meeting.id} className="flex items-start gap-3 px-4 py-3.5">
-            <div className="w-14 shrink-0">
+          <li key={meeting.id} className="flex items-start gap-3 px-4 py-3.5 transition hover:bg-[#f7faf8]">
+            <div className="flex w-14 shrink-0 flex-col">
               <p className="text-[12px] font-bold tracking-wide text-[#0a3d2e]">
                 {meeting.dateLabel}
               </p>
@@ -23,7 +23,7 @@ export function UpcomingMeetings({ meetings }: { meetings: Meeting[] }) {
               <p className="text-[11px] text-[#6b7c74]">{meeting.detail}</p>
               <p className="mt-0.5 text-[11px] text-[#8a9a92]">{meeting.leads}</p>
             </div>
-            <span className="shrink-0 rounded bg-[#f0f5f2] px-2 py-0.5 text-[10px] font-semibold tracking-wide text-[#5a6b63]">
+            <span className="shrink-0 rounded-md bg-[#f0f5f2] px-2 py-0.5 text-[10px] font-semibold tracking-wide text-[#5a6b63]">
               {meeting.status}
             </span>
           </li>
