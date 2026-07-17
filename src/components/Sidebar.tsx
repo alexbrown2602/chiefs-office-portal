@@ -10,6 +10,7 @@ import {
   HardHat,
   Home,
   Landmark,
+  LayoutDashboard,
   ListTodo,
   LogOut,
   Map,
@@ -23,6 +24,7 @@ import { sidebarNav } from "@/lib/data";
 import { clearStoredUser, getStoredUser, type AuthUser } from "@/lib/auth";
 
 const iconMap: Record<string, React.ReactNode> = {
+  dashboard: <LayoutDashboard className="h-4 w-4" />,
   "chiefs-office": <Landmark className="h-4 w-4" />,
   "major-projects": <FolderKanban className="h-4 w-4" />,
   lands: <Map className="h-4 w-4" />,
@@ -94,7 +96,7 @@ export function Sidebar() {
   }, []);
 
   const isActive = (href: string, id: string) => {
-    if (href === "/dashboard") {
+    if (id === "dashboard") {
       return pathname === "/dashboard" || pathname === "/";
     }
     if (id === "approvals") return pathname.startsWith("/approvals");
@@ -130,6 +132,13 @@ export function Sidebar() {
       </div>
 
       <nav className="flex-1 overflow-y-auto px-2.5 pb-4">
+        <div className="mb-4">
+          <NavItem
+            {...sidebarNav.dashboard}
+            active={isActive(sidebarNav.dashboard.href, sidebarNav.dashboard.id)}
+          />
+        </div>
+
         <NavGroup title="Departments">
           {sidebarNav.departments.map((item) => (
             <NavItem

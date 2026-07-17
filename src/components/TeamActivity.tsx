@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronRight, Flag } from "lucide-react";
 import type { TeamMember } from "@/lib/types";
 
 export function TeamActivity({ members }: { members: TeamMember[] }) {
   const [expandedId, setExpandedId] = useState(members[0]?.id ?? "");
+
+  useEffect(() => {
+    setExpandedId(members[0]?.id ?? "");
+  }, [members]);
 
   return (
     <section className="flex min-h-0 flex-1 flex-col rounded-xl border border-[#e5ebe8] bg-white shadow-[0_1px_2px_rgba(10,61,46,0.04)]">
@@ -16,6 +20,11 @@ export function TeamActivity({ members }: { members: TeamMember[] }) {
           Full register
         </Link>
       </div>
+      {members.length === 0 ? (
+        <p className="px-4 py-8 text-center text-[13px] text-[#8a9a92]">
+          No team activity for this department.
+        </p>
+      ) : null}
       <ul className="overflow-y-auto">
         {members.map((member) => {
           const open = expandedId === member.id;

@@ -1,4 +1,5 @@
 import { AuthGuard } from "@/components/AuthGuard";
+import { AIChatbot } from "@/components/AIChatbot";
 import { Sidebar } from "@/components/Sidebar";
 
 export default function PortalLayout({
@@ -13,6 +14,7 @@ export default function PortalLayout({
         <main className="flex min-w-0 flex-1 flex-col overflow-hidden">
           {children}
         </main>
+        <AIChatbot />
       </div>
     </AuthGuard>
   );
