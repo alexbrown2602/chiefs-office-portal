@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Takla Nation — Chief's Office Portal
 
-## Getting Started
+Enterprise project & file management dashboard for Takla Nation, built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+## Features
+
+- Executive dashboard matching the Chief's Office Portal mockup
+- Department selector that filters approvals, KPIs, and meetings
+- Needs Approval / Signature workflow (Sign, Decide, Review, Done)
+- Team activity accordion with priority flags
+- Upcoming meetings & calendar view
+- Document repository with version history
+- Tasks & action items register
+- Finance dashboard with department budgets
+- Reports & analytics
+- Login and signup with role selection (demo auth via localStorage)
+- Role-aware sidebar navigation across departments and operations
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Demo login:** `demo@takla.ca` / `demo1234`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech stack
 
-## Learn More
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- lucide-react icons
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  app/
+    login/              # Sign in
+    signup/             # Register
+    (portal)/
+      dashboard/        # Chief's Office overview
+      approvals/        # Signature queue
+      files/            # Document repository
+      tasks/            # Task register
+      calendar/         # Meetings
+      finance/          # Finance dashboard
+      reports/          # Analytics
+      settings/         # Profile & security
+      departments/[slug]/
+  components/           # UI building blocks
+  lib/                  # Mock data & auth helpers
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Based on
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+UI mockup for Chief's Office Portal and the Enterprise Project & File Management System Proposal (Phase 1–2 feature surface with mock data).
